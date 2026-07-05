@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: one-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: one
+
+  template:
+
+    metadata:
+      labels:
+        app: one
+
+    spec:
+
+      containers:
+
+      - name: one-container
+
+        image: skmalikbasha139/one:v1
+
+        imagePullPolicy: Always
+
+        ports:
+
+        - containerPort: 8080
